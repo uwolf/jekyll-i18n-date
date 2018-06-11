@@ -35,12 +35,10 @@ module Jekyll
 		
 		def current_locale(locale)
 			l = locale || @context.registers[:page]["lang"] || @context.registers[:site].config["lang"]
-					p I18n.config.available_locales
-			if l && I18n.config.available_locales.include?(l.to_sym) 
-					p "current LOCAL"
-					p l
-					l
-				else
+				
+			if l && I18n.config.available_locales.include?(l.to_sym)
+				l
+			else
 				false
 			end
 		end
